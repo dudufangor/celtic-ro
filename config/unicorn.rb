@@ -5,7 +5,7 @@ working_directory root
 
 # Unicorn PID file location
 # pid '/path/to/pids/unicorn.pid'
-pid "#{ root }/pids/unicorn.pid"
+pid "#{ root }/tmp/pids/unicorn.pid"
 
 # Path to logs
 # stderr_path '/path/to/log/unicorn.log'
