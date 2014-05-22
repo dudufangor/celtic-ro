@@ -37,12 +37,6 @@ namespace :deploy do
 
   after "deploy:setup", "deploy:setup_config"
 
-  task :symlink_config, roles: :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
-
-  after "deploy:finalize_update", "deploy:symlink_config"
-
   task :bundle do
     run "cd #{ release_path } && LC_ALL='en_US.UTF-8' RAILS_ENV='#{ environment }' bundle install --without test development"
   end
