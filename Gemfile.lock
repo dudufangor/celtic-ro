@@ -128,7 +128,7 @@ DEPENDENCIES
   capistrano-ext (= 1.2.1)
   coffee-rails (= 3.2.1)
   jquery-rails
-  mysql2 (= 0.3.6)
+  mysql2
   rails (= 3.2.17)
   sass-rails (= 3.2.3)
   uglifier (= 1.0.3)
