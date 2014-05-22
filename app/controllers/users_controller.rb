@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Cadastro efetuado!'
-      redirect_to new_user_path
+      redirect_to new_users_path
     else
       render action: 'edit'
     end
