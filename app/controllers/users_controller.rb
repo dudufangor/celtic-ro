@@ -1,14 +1,14 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController  
   def new
     @user = User.new
   end
 
   def create
-    @user = params[:user]
+    @user = User.new(params[:user].permit)
 
     if @user.save
       flash[:success] = 'Cadastro efetuado!'
-      redirect_to new_users_path
+      redirect_to new_user_path
     else
       render action: 'edit'
     end
