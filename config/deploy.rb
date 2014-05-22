@@ -13,10 +13,6 @@ set :deploy_to, '/root/celtic_ro/'
 set :repository, 'git@github.com:dudufangor/celtic-ro.git'
 set :scm, :git
 set :normalize_asset_timestamps, false
-set :branch, 'master'
-set :environment, 'production'
-set :keep_releases, 3
-role :app, 'interiro'
 
 # Rvm
 set :rvm_ruby_string, 'ruby-2.1.2@celtic_ro'
