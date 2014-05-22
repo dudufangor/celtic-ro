@@ -4,7 +4,7 @@ require 'capistrano/ext/multistage'
 require 'rvm/capistrano'
 
 # General
-set :application, 'celtic-ro'
+set :application, 'celtic_ro'
 set :use_sudo, false
 set :user, 'root'
 
@@ -28,6 +28,20 @@ namespace :deploy do
       run "/etc/init.d/unicorn_#{application} #{command}"
     end
   end
+
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/config"
+  end
+
+  after "deploy:setup", "deploy:setup_config"
+
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+
+  after "deploy:finalize_update", "deploy:symlink_config"
 
   task :bundle do
     run "cd #{ release_path } && LC_ALL='en_US.UTF-8' RAILS_ENV='#{ environment }' bundle install --without test development"
