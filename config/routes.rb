@@ -1,3 +1,3 @@
 CelticRo::Application.routes.draw do
-  resources :login
+  resources :user
 end
