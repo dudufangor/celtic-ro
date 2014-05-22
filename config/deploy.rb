@@ -22,8 +22,11 @@ set :rvm_type, :system
 after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle'
 
 namespace :deploy do
-  task :restart, roles: :app, except: { no_release: true } do
-    run "touch #{File.join current_path, 'tmp', 'restart.txt'}"
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command, roles: :app, except: {no_release: true} do
+      run "/etc/init.d/unicorn_#{application} #{command}"
+    end
   end
 
   task :bundle do
