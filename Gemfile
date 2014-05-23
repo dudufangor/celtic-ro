@@ -10,11 +10,9 @@ gem 'capistrano-ext', '1.2.1'
 gem 'rvm-capistrano', '1.5.1'
 gem 'simple_form', '3.0.2'
 
-group :assets do
-  gem 'sass-rails',   '4.0.3'
-  gem 'coffee-rails', '4.0.1'
-  gem 'uglifier', '2.5.0'
-  gem 'haml', '4.0.5'
-end
+gem 'sass-rails',   '4.0.3'
+gem 'coffee-rails', '4.0.1'
+gem 'uglifier', '2.5.0'
+gem 'haml', '4.0.5'
 
 gem 'jquery-rails'
