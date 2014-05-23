@@ -33,6 +33,7 @@ namespace :deploy do
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "ln -s /root/downloads/kRo.zip /root/celtic_ro/current/public/kro.zip"
     run "mkdir -p #{shared_path}/config"
   end
 
