@@ -46,6 +46,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    haml (4.0.5)
+      tilt
     highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
@@ -132,6 +134,7 @@ DEPENDENCIES
   capistrano (= 2.15.5)
   capistrano-ext (= 1.2.1)
   coffee-rails (= 4.0.1)
+  haml (= 4.0.5)
   jquery-rails
   mysql2
   rails (= 4.1.1)

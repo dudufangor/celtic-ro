@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
 	self.table_name = 'login'
 
+
 	alias_attribute :username, :userid
 	alias_attribute :password, :user_pass
-	
+
 	validates :email, confirmation: true
 	validates :email_confirmation, presence: true
 	validates :password, confirmation: true
@@ -12,4 +13,5 @@ class User < ActiveRecord::Base
 	validates :username, :email, uniqueness: true
 	validates :username, :email, :password, :sex, presence: true
 	validates :sex, inclusion: %w(M F)
+	validates :email, format: /\A ([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 end
