@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:copy_downloads'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -33,7 +33,6 @@ namespace :deploy do
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-    run "ln -s /root/downloads/kRo.zip /root/celtic_ro/current/public/kro.zip"
     run "mkdir -p #{shared_path}/config"
   end
 
@@ -46,5 +45,10 @@ namespace :deploy do
   desc 'Copy config files like database.yml and .rvmrc'
   task :copy_config_files do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
+  end
+
+  desc 'Link the game download files to public'
+  task :copy_downloads do
+    run "ln -s /root/downloads/kRo.zip /root/celtic_ro/current/public/kro.zip"
   end
 end
