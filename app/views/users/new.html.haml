@@ -2,3 +2,10 @@
   - @user.errors.full_messages.each do |error|
     %li
       %span.error= error
+      
+= simple_form_for @user do |user|
+  = user.input :username
+  = user.input :password
+  = user.input :email
+  = user.input :sex, collection: %w(M F)
+  = user.button :submit 
