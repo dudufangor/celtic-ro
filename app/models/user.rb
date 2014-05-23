@@ -13,5 +13,7 @@ class User < ActiveRecord::Base
 	validates :username, :email, uniqueness: true
 	validates :username, :email, :password, :sex, presence: true
 	validates :sex, inclusion: %w(M F)
-	validates :email, format: /\A ([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+	validates :username, :password, length: { minimum: 6, maximum: 12 }
+	validates :email, format: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, allow_blank: true
+	validates :username, :password, format: /\A[a-z0-9]+[-a-z0-9]*[a-z0-9]+\z/i, allow_blank: true
 end
