@@ -1,7 +1,7 @@
-= user.input :username
-= user.input :password
-= user.input :password_confirmation
-= user.input :email
-= user.input :email_confirmation
-= user.input :sex, collection: %w(M F)
-= user.button :submit 
+= user.input :username, label: 'Nome de Usuário:'
+= user.input :password, label: 'Senha:'
+= user.input :password_confirmation, label: 'Confirmação de Senha:'
+= user.input :email, label: 'E-Mail:'
+= user.input :email_confirmation, label: 'Confirmação de E-Mail'
+= user.input :sex, collection: %w(M F), label: 'Sexo:'
+= user.button :submit
