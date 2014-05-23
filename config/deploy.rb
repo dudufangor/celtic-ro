@@ -1,7 +1,6 @@
 # Requires
 require 'bundler/setup'
 require 'capistrano/ext/multistage'
-require 'rvm/capistrano'
 
 # General
 set :application, 'celtic_ro'
@@ -15,8 +14,10 @@ set :scm, :git
 set :normalize_asset_timestamps, false
 
 # Rvm
+set :rvm_bin_path, '/usr/local/rvm/bin/'
 set :rvm_ruby_string, 'ruby-2.1.2@celtic_ro'
 set :rvm_type, :system
+require 'rvm/capistrano'
 
 # Flow
 after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle'
