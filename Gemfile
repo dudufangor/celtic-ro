@@ -8,6 +8,7 @@ gem 'unicorn', '4.8.3'
 gem 'capistrano', '2.15.5'
 gem 'capistrano-ext', '1.2.1'
 gem 'rvm-capistrano', '1.5.1'
+gem 'simple_form', '3.0.2'
 
 group :assets do
   gem 'sass-rails',   '4.0.3'
