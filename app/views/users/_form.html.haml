@@ -15,7 +15,9 @@
     = user.input :email_confirmation
 
   .user.sex
-    = user.input :sex, collection: %w(M F)
+    = user.input :sex, collection: %w(M F), include_blank: false
 
   .user.btn-submit
     = user.button :submit
+
+  .alice
