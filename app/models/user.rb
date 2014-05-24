@@ -15,4 +15,7 @@ class User < ActiveRecord::Base
   validates :username, :password, length: { minimum: 6, maximum: 12 }, allow_blank: true
   validates :email, format: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, allow_blank: true
   validates :username, :password, format: /\A[a-z0-9]+[-a-z0-9]*[a-z0-9]+\z/i, allow_blank: true
+
+  # associations
+  has_many :chars, foreign_key: 'account_id'
 end
