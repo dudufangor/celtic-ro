@@ -1,8 +1,13 @@
 %h1.logo Celtic RO - register
 
+.banner_downloads
 %ul.downloads
-  %li Download do KRO
-  %li Download do Patch
+  %li
+    =link_to '/kro.zip' do
+      Download do KRO
+  %li
+    =link_to '/celticRO_patch.rar' do
+      Download do Patch
 
 %ul
   - @user.errors.full_messages.each do |error|
