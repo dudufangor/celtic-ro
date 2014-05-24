@@ -49,6 +49,7 @@ namespace :deploy do
 
   desc 'Link the game download files to public'
   task :copy_downloads do
-    run "ln -s /root/downloads/kRo.zip #{ release_path }/public/kro.zip"
+    run "ln -s /root/download/kro.zip #{ release_path }/public/kro.zip"
+    run "ln -s /root/download/celticRO_patch.rar #{ release_path }/public/celticRO_patch.rar"
   end
 end
