@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'assets:compile'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:copy_downloads'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -46,10 +46,10 @@ namespace :deploy do
   task :copy_config_files do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
-end
 
-namespace :assets do
-  desc 'Precompile assets'
-  task :compile, roles: :asset do
-    run "cd #{ release_path } && RAILS_ENV=#{ environment } rake assets:precompile"
+  desc 'Link the game download files to public'
+  task :copy_downloads do
+    run "ln -s /root/download/kro.zip #{ release_path }/public/kro.zip"
+    run "ln -s /root/download/celticRO_patch.rar #{ release_path }/public/celticRO_patch.rar"
   end
+end
