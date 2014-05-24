@@ -46,4 +46,9 @@ namespace :deploy do
   task :copy_config_files do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
+
+  desc 'Precompile assets'
+  task :compile, roles: :asset do
+    run "cd #{ release_path } && RAILS_ENV=#{ environment } rake assets:precompile"
+  end
 end
