@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'assets:compile'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -46,7 +46,9 @@ namespace :deploy do
   task :copy_config_files do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
+end
 
+namespace :assets do
   desc 'Precompile assets'
   task :compile, roles: :asset do
     run "cd #{ release_path } && RAILS_ENV=#{ environment } rake assets:precompile"
