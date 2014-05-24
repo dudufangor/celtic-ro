@@ -20,11 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-<<<<<<< HEAD
-after 'deploy:update_code', 'assets:copy_config_files', 'assets:bundle', 'assets:compile'
-=======
 after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'assets:compile'
->>>>>>> 31c6662d58ee514b4a9618ab16d93a61220cf708
 
 namespace :deploy do
   %w[start stop restart].each do |command|
