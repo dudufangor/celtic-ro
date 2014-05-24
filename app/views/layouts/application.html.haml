@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+    %meta{ content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type' }
+    %meta{ content: 'Celtic RO', name: 'description'}
+
+    = csrf_meta_tags
+    %title Celtic RO
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+
+    = yield

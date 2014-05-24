@@ -1,4 +1,16 @@
 pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+    attributes:
+      user:
+        username: Nome de Usuário
+        password: Senha
+        password_confirmation: Confirmação de Senha
+        email: E-Mail
+        email_confirmation: Confirmação de E-Mail
+        sex: Sexo
+
   date:
     abbr_day_names:
     - Dom

@@ -1,14 +1,13 @@
 class User < ActiveRecord::Base
   self.table_name = 'login'
 
-
   alias_attribute :username, :userid
   alias_attribute :password, :user_pass
 
   validates :email, confirmation: true
   validates :password, confirmation: true
 
-  validates :password_confirmation, :email_confirmation, 
+  validates :password_confirmation, :email_confirmation,
     :username, :email, :password, :sex, presence: true
 
   validates :username, :email, uniqueness: true

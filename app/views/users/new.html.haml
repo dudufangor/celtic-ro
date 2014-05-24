@@ -1,7 +1,13 @@
+%h1.logo Celtic RO - register
+
+%ul.downloads
+  %li Download do KRO
+  %li Download do Patch
+
 %ul
   - @user.errors.full_messages.each do |error|
     %li
       %span.error= error
-      
+
 = simple_form_for @user do |user|
   = render 'form', user: user
