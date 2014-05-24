@@ -47,7 +47,7 @@ namespace :deploy do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
 end
-one day perhaps....
+
 namespace :assets do
   desc 'Precompile assets'
   task :compile, roles: :asset do
