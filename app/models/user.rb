@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  authenticates_with_sorcery!
+
   self.table_name = 'login'
 
   alias_attribute :username, :userid
