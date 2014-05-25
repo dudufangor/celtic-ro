@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules << :remember_me
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -52,19 +52,19 @@ Rails.application.config.sorcery.configure do |config|
   # will register the time of last user login, every login.
   # Default: `true`
   #
-  config.register_login_time = false
+  # config.register_login_time = false
 
 
   # will register the time of last user logout, every logout.
   # Default: `true`
   #
-  config.register_logout_time = false
+  # config.register_logout_time = false
 
 
   # will register the time of last user action, every action.
   # Default: `true`
   #
-  config.register_last_activity_time = false
+  # config.register_last_activity_time = false
 
 
   # -- external --
@@ -265,7 +265,7 @@ Rails.application.config.sorcery.configure do |config|
     # manually handle how and when email is sent.
     # Default: `false`
     #
-    user.activation_mailer_disabled = true
+    # user.activation_mailer_disabled = true
 
 
     # activation needed email method on your mailer class.
