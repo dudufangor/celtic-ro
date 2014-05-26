@@ -14,5 +14,8 @@
     %li
       %span.error= error
 
+- if flash[:success]
+  %span.sucess= flash[:success]
+
 = simple_form_for @user do |user|
   = render 'form', user: user

@@ -11,9 +11,6 @@
   .user.email
     = user.input :email
 
-  .user.email_confirmation
-    = user.input :email_confirmation
-
   .user.sex
     = user.input :sex, collection: %w(M F), include_blank: false
 
