@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_login, only: [:edit, :show, :reset]
+
   def edit
     @user = current_user
   end
@@ -24,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = current_user || nil
 
     if @user.update_attributes(user_params)
       flash[:success] = 'Usuario Atualizado!'
@@ -41,6 +43,8 @@ class UsersController < ApplicationController
       @char.reset!
       sleep 1
       render nothing: true
+    else
+      not_found
     end
   end
 
