@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.integer "account_id",               default: 0,     null: false
     t.boolean "char_num",                 default: false, null: false
     t.string  "name",          limit: 30, default: "",    null: false
-    t.integer "klass",         limit: 2,  default: 0,     null: false
+    t.integer "class",         limit: 2,  default: 0,     null: false
     t.integer "base_level",    limit: 2,  default: 1,     null: false
     t.integer "job_level",     limit: 2,  default: 1,     null: false
     t.integer "base_exp",      limit: 8,  default: 0,     null: false
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "elemental", primary_key: "ele_id", force: true do |t|
     t.integer "char_id",                         null: false
-    t.integer "klass",     limit: 3, default: 0, null: false
+    t.integer "class",     limit: 3, default: 0, null: false
     t.integer "mode",                default: 1, null: false
     t.integer "hp",                  default: 1, null: false
     t.integer "sp",                  default: 1, null: false
@@ -315,7 +315,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.integer "hair",       limit: 1,  default: 0,  null: false
     t.integer "hair_color", limit: 2,  default: 0,  null: false
     t.integer "gender",     limit: 1,  default: 0,  null: false
-    t.integer "klass",      limit: 2,  default: 0,  null: false
+    t.integer "class",      limit: 2,  default: 0,  null: false
     t.integer "lv",         limit: 2,  default: 0,  null: false
     t.integer "exp",        limit: 8,  default: 0,  null: false
     t.integer "exp_payper", limit: 1,  default: 0,  null: false
@@ -361,7 +361,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "homunculus", primary_key: "homun_id", force: true do |t|
     t.integer "char_id",                             null: false
-    t.integer "klass",       limit: 3,  default: 0,  null: false
+    t.integer "class",       limit: 3,  default: 0,  null: false
     t.integer "prev_class",  limit: 3,  default: 0,  null: false
     t.string  "name",        limit: 24, default: "", null: false
     t.integer "level",       limit: 2,  default: 0,  null: false
@@ -615,7 +615,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "mercenary", primary_key: "mer_id", force: true do |t|
     t.integer "char_id",                            null: false
-    t.integer "klass",        limit: 3, default: 0, null: false
+    t.integer "class",        limit: 3, default: 0, null: false
     t.integer "hp",                     default: 1, null: false
     t.integer "sp",                     default: 1, null: false
     t.integer "kill_counter",                       null: false
@@ -986,7 +986,7 @@ ActiveRecord::Schema.define(version: 3) do
   end
 
   create_table "pet", primary_key: "pet_id", force: true do |t|
-    t.integer "klass",       limit: 3,  default: 0,  null: false
+    t.integer "class",       limit: 3,  default: 0,  null: false
     t.string  "name",        limit: 24, default: "", null: false
     t.integer "account_id",             default: 0,  null: false
     t.integer "char_id",                default: 0,  null: false
