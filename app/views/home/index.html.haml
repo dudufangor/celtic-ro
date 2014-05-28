@@ -5,10 +5,13 @@
     Info
   %a{ href: '#' }
     Guias
+  %a{ href: '/users/new' }
+    Registro
   %a{ href: '#' }
     Downloads
   %a{ href: '#' }
     Contato
+
   #user_panel
     - if current_user
       = link_to 'Editar Perfil', user_edit_path
