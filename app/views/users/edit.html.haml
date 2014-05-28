@@ -1,0 +1,10 @@
+%ul
+  - @user.errors.full_messages.each do |error|
+    %li
+      %span.error= error
+
+- if flash[:success]
+  %span.sucess= flash[:success]
+
+= simple_form_for @user, url: { action: :update } do |user|
+  = render 'form', user: user

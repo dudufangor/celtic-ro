@@ -1,0 +1,10 @@
+%h1 Usuario
+
+.chars
+  %h1 Personagens
+  - @user.chars.each do |char|
+    %span.name Nome: #{ char.name }
+    %span.zeny Zeny: #{ char.zeny }
+    %span.level Level: #{ char.base_level }
+    %span.map Mapa Atual: #{ char.last_map }
+    = link_to 'Resetar Posição', reset_char_path(char.name), data: { remote: true, confirm: "Tem certeza?", disable_with: 'resetando...' }
