@@ -12,11 +12,4 @@
     = csrf_meta_tags
 
   %body
-    #user_panel
-      - if current_user
-        = link_to 'Editar Perfil', user_edit_path
-        = link_to 'Logout', :logout, method: :post
-      - else
-        = link_to 'Login', :login
-
     = yield
