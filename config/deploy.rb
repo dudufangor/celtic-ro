@@ -36,7 +36,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
   end
 
-  after "deploy:setup", "deploy:setup_config"
+  after 'deploy:setup', 'deploy:setup_config'
 
   task :bundle do
     run "cd #{ release_path } && LC_ALL='en_US.UTF-8' RAILS_ENV='#{ environment }' bundle install --without test development"
@@ -52,9 +52,14 @@ namespace :deploy do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
 
+  desc 'Fix unicorn bundle'
+  task :unicorn_bundle do
+    run "cd #{ current_path } && bundle exec unicorn -D -c config/unicorn.rb -E #{ environment }"
+  end
+
   desc 'Link the game download files to public'
   task :copy_downloads do
-    # run "ln -s /root/download/kro.zip #{ release_path }/public/kro.zip"
+    run "ln -s /root/download/Ragnarok.rar #{ release_path }/public/Ragnarok.rar"
     run "ln -s /root/download/celticRO_patch.rar #{ release_path }/public/celticRO_patch.rar"
   end
 end
