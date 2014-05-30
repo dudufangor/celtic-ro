@@ -52,7 +52,7 @@ namespace :deploy do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
   end
 
-  des 'Fix unicorn bundle'
+  desc 'Fix unicorn bundle'
   task :unicorn_bundle do
     run "cd #{ release_path } && bundle exec unicorn -D -c config/unicorn.rb -E #{ environment }"
   end
