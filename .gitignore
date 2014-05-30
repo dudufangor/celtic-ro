@@ -11,6 +11,8 @@
 /db/schema.rb
 /log/*
 /public/system/*
+/public/system
+/log
 /spec/tmp/*
 /tmp/*
 /vendor/bundle
