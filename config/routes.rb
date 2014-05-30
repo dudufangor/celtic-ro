@@ -1,6 +1,6 @@
 CelticRo::Application.routes.draw do
   # login/logout
-  root to: 'home#index', as: :home
+  root to: 'users#new', as: :home
 
   get 'login' => 'user_sessions#new', as: :login
   post 'logout' => 'user_sessions#destroy', as: :logout
