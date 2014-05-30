@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads', 'deploy:unicorn_bundle'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -36,7 +36,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
   end
 
-  after "deploy:setup", "deploy:setup_config"
+  after 'deploy:setup', 'deploy:setup_config', 'deploy:unicorn_bundle'
 
   task :bundle do
     run "cd #{ release_path } && LC_ALL='en_US.UTF-8' RAILS_ENV='#{ environment }' bundle install --without test development"
@@ -54,7 +54,7 @@ namespace :deploy do
 
   desc 'Fix unicorn bundle'
   task :unicorn_bundle do
-    run "cd #{ release_path } && bundle exec unicorn -D -c config/unicorn.rb -E #{ environment }"
+    run "cd #{ current_path } && bundle exec unicorn -D -c config/unicorn.rb -E #{ environment }"
   end
 
   desc 'Link the game download files to public'
