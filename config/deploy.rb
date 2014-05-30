@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads', 'deploy:unicorn_bundle'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -36,7 +36,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
   end
 
-  after 'deploy:setup', 'deploy:setup_config', 'deploy:unicorn_bundle'
+  after 'deploy:setup', 'deploy:setup_config'
 
   task :bundle do
     run "cd #{ release_path } && LC_ALL='en_US.UTF-8' RAILS_ENV='#{ environment }' bundle install --without test development"
