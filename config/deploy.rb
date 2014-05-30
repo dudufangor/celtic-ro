@@ -20,7 +20,7 @@ set :rvm_type, :system
 require 'rvm/capistrano'
 
 # Flow
-after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads'
+after 'deploy:update_code', 'deploy:copy_config_files', 'deploy:bundle', 'deploy:compile', 'deploy:copy_downloads', 'deploy:unicorn_bundle'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -50,6 +50,11 @@ namespace :deploy do
   desc 'Copy config files like database.yml and .rvmrc'
   task :copy_config_files do
     run "cp #{ release_path }/config/server/rvmrc #{ release_path }/.rvmrc"
+  end
+
+  des 'Fix unicorn bundle'
+  task :unicorn_bundle do
+    run "cd #{ release_path } && bundle exec unicorn -D -c config/unicorn.rb -E #{ environment }"
   end
 
   desc 'Link the game download files to public'
