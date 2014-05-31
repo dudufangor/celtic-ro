@@ -1,26 +1,42 @@
-%h1.logo Celtic RO - register
+%header#header.header.header--fixed
+  %nav
+    %a{ href: '#' }
+      Home
+    %a{ href: '#' }
+      Info
+    %a{ href: '#' }
+      Guias
+    %a{ href: '/users/new' }
+      Registro
+    %a{ href: '#' }
+      Downloads
+    %a{ href: '#' }
+      Contato
 
-.online_players
-  = online_users
-  online
+.register_page
+  %h1.logo Celtic RO - register
 
-.banner_downloads
-%ul.downloads
-  %li
-    =link_to 'Ragnarok.rar', target: 'blank' do
-      Download do KRO
+  .online_players
+    = online_users
+    online
 
-  %li
-    =link_to 'celticRO_patch.rar' do
-      Download do Patch
-
-%ul
-  - @user.errors.full_messages.each do |error|
+  .banner_downloads
+  %ul.downloads
     %li
-      %span.error= error
+      =link_to 'Ragnarok.rar', target: 'blank' do
+        Download do KRO
 
-- if flash[:success]
-  %span.sucess= flash[:success]
+    %li
+      =link_to 'celticRO_patch.rar' do
+        Download do Patch
 
-= simple_form_for @user do |user|
-  = render 'form', user: user
+  %ul
+    - @user.errors.full_messages.each do |error|
+      %li
+        %span.error= error
+
+  - if flash[:success]
+    %span.sucess= flash[:success]
+
+  = simple_form_for @user do |user|
+    = render 'form', user: user
