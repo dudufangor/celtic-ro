@@ -1,25 +1,10 @@
-$( document ).ready(function() {
+$(window).scroll(function () {
 
-  var header = new Headroom(document.querySelector("#header"), {
-      tolerance: 5,
-      offset : 205,
-      classes: {
-        initial: "animated",
-        pinned: "slideDown",
-        unpinned: "slideUp"
-      }
-  });
-  header.init();
+    if ($(window).scrollTop() >= 565) {
+        $('#header').addClass('header--fixed');
+    }
 
-  var bttHeadroom = new Headroom(document.getElementById("btt"), {
-      tolerance : 0,
-      offset : 500,
-      classes : {
-          initial : "slide",
-          pinned : "slide--reset",
-          unpinned : "slide--down"
-      }
-  });
-  bttHeadroom.init();
-
+    if ($(window).scrollTop() < 565) {
+        $('#header').removeClass('header--fixed');
+    }
 });

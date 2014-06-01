@@ -1,8 +1,12 @@
 header
-  background: #555
+  //background: #093A34
+  //+background-image(linear-gradient(to bottom, #2b637e, #26566e))
+  +background-image(linear-gradient(180deg, #03b522, #006e2e))
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 2px 8px rgba(0,0,0,0.2)
+
   nav
     @extend %grid-box--8of10
-    height: 40px
+    height: 60px
     position: relative
     margin: 0 auto
     a
@@ -10,10 +14,14 @@ header
       color: #FFF
       font-weight: bold
       padding: 0 40px
-      line-height: 40px
+      line-height: 60px
 
 .header
-  background-color: #292f36
+  position: relative
+  z-index: 10
+  right: 0
+  left: 0
+  top: 0
 
 .header__link
   color: #fff
@@ -26,6 +34,13 @@ header
 
 .header__link:hover .icon
   color: #4ecdc4
+
+//.header--fixed
+//  position: fixed
+//  z-index: 10
+//  right: 0
+//  left: 0
+//  top: 0
 
 .header--fixed
   position: fixed
