@@ -1,0 +1,11 @@
+.login_form
+  = form_tag user_sessions_path, method: :post do
+    .field
+      .line
+        = label_tag :username
+        = text_field_tag :username
+      .line
+        = label_tag :password
+        = password_field_tag :password
+
+      = submit_tag "Login"

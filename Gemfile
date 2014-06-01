@@ -9,6 +9,7 @@ gem 'capistrano', '2.15.5'
 gem 'capistrano-ext', '1.2.1'
 gem 'rvm-capistrano', '1.5.1'
 gem 'simple_form', '3.0.2'
+gem 'sorcery', '0.8.5'
 
 gem 'sass-rails',   '4.0.3'
 gem 'compass-rails', '1.1.7'
