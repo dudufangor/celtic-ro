@@ -8,9 +8,8 @@
     %title Celtic RO Beta - 100x / 100x / 50x
 
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
-
     = yield
+    = javascript_include_tag "application"

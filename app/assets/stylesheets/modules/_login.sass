@@ -1,0 +1,54 @@
+.login_form
+  +border-radius(4px)
+  border: 2px solid #ccc
+  width: 350px
+  height: 162px
+  margin: 0 auto
+  position: relative
+  top: 160px
+
+  color: #FFF
+  +border-radius(4px)
+  text-align: center
+  vertical-align: middle
+  //+background-image(linear-gradient(to bottom, #03b522, #006e2e))
+  +background-image(linear-gradient(to bottom, #77AB59, #C9DF8A))
+  box-shadow: 0px 1px 1px rgba(0,58,13,0.8) inset, 1px 1px 1px rgba(0,58,13,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5)
+  &:hover
+    box-shadow: 0px 1px 1px rgba(0,58,13,0.8) inset, 1px 1px 3px rgba(0,58,13,0.2)
+    +transition(all 300ms linear)
+
+  form
+    width: 300px
+    height: 110px
+    margin: 0 auto
+    padding: 25px 0
+    label
+      display: inline-block
+      float: left
+      clear: left
+      width: 80px
+      line-height: 30px
+      vertical-align: baseline
+      text-align: right
+
+    .field .line
+      height: 40px
+
+    input
+      display: inline-block
+      float: left
+      height: 20px
+      padding: 5px
+      margin-left: 10px
+      border: 1px solid #8c9b8c
+      +border-radius(3px)
+      box-shadow: 0 1px rgba(255,255,255,0.4), 0 1px 4px #bdbdbd inset
+
+    input[type="submit"]
+      width: 120px
+      height: 40px
+      margin: 5px auto
+      margin-left: 91px
+      color: #36802D
+      font-weight: bold
