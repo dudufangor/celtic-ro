@@ -8,7 +8,6 @@ pt-BR:
         password: Senha
         password_confirmation: Confirmação de Senha
         email: E-Mail
-        email_confirmation: Confirmação de E-Mail
         sex: Sexo
 
   date:

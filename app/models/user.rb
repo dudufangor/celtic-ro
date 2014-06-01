@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, confirmation: true
   validates :password, confirmation: true
 
-  validates :password_confirmation, :email_confirmation,
+  validates :password_confirmation,
     :username, :email, :password, :sex, presence: true
 
   validates :username, :email, uniqueness: true

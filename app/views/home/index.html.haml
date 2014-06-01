@@ -1,0 +1,46 @@
+.highlights
+  %h2 Descrição
+  %h3 CALL TO ACTION
+  %ul
+    %li @zerolag
+    %li @pontos_fortes
+    %li @diferencial
+
+%header#header.header
+  %nav
+    %a{ href: '/' }
+      Home
+    %a{ href: '#' }
+      Info
+    %a{ href: '#' }
+      Guias
+    %a{ href: '#' }
+      Registro
+    %a{ href: '/register' }
+      Downloads
+    %a{ href: '#' }
+      Contato
+
+  #user_panel
+    - if current_user
+      = link_to 'Editar Perfil', user_edit_path
+      = link_to 'Logout', :logout, method: :post
+    - else
+      = link_to 'Login', :login
+
+.informations
+  %h2 Info do server
+  %ul
+    %li @commands
+    %li @rates
+    %li @server_conf
+
+.extra_informations
+  %h2 @extras / @eventos / @exp_rotativa / @features
+
+.join
+  %h2 [CADASTRO]
+  %h2 [DOWNLOAD]
+
+.footer
+  %h2  Contatos / Social / @copyright
