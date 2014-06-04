@@ -24,19 +24,10 @@
   #user_panel
     = link_to 'Login', :login
 
-.informations
-  %h2 Info do server
-  %ul
-    %li @commands
-    %li @rates
-    %li @server_conf
+= render 'home/server_information'
 
-.extra_informations
-  %h2 @extras / @eventos / @exp_rotativa / @features
+= render 'home/extra_information'
 
-.join
-  %h2 [CADASTRO]
-  %h2 [DOWNLOAD]
+= render 'home/join_game'
 
-.footer
-  %h2  Contatos / Social / @copyright
+= render 'home/footer'
