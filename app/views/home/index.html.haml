@@ -2,18 +2,7 @@
 
 %header#header.header
   %nav
-    %a{ href: '#' }
-      Home
-    %a{ href: '#informations' }
-      Info
-    %a{ href: '#' }
-      Guias
-    %a{ href: '#join' }
-      Registro
-    %a{ href: '#join' }
-      Downloads
-    %a{ href: '#' }
-      Contato
+    = render partial: 'layouts/nav', collection: nav
 
   #user_panel
     = link_to 'Login', :login
