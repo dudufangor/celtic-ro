@@ -1,4 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require nav
-//= require scroll
+//= require jquery.scrollTo
+//= require jquery.localScroll
+ //= require scroll
