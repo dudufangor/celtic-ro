@@ -4,25 +4,16 @@
   left: 0
   bottom: 0
   font-size: .9em
-  -webkit-transform: translateY(4em)
-  -ms-transform: translateY(4em)
-  transform: translateY(4em)
+  +translateY(4em)
 
 .slide
-  -webkit-transition: all .25s ease-in-out
-  -moz-transition: all .25s ease-in-out
-  -o-transition: all .25s ease-in-out
-  transition: all .25s ease-in-out
+  +transition(all .25s ease-in-out)
 
 .slide--reset
-  -webkit-transform: translateY(0)
-  -ms-transform: translateY(0)
-  transform: translateY(0)
+  +translateY(0)
 
 .slide--up
-  -webkit-transform: translateY(-100%)
-  -ms-transform: translateY(-100%)
-  transform: translateY(-100%)
+  +translateY(-100%)
 
 .animated
   -webkit-animation-duration: .5s
@@ -36,31 +27,31 @@
 
 @-webkit-keyframes slideDown
   0%
-    -webkit-transform: translateY(-100%)
+    +translateY(-100%)
 
   100%
-    -webkit-transform: translateY(0)
+    +translateY(0)
 
 @-moz-keyframes slideDown
   0%
-    -moz-transform: translateY(-100%)
+    +translateY(-100%)
 
   100%
-    -moz-transform: translateY(0)
+    +translateY(0)
 
 @-o-keyframes slideDown
   0%
-    -o-transform: translateY(-100%)
+    +translateY(-100%)
 
   100%
-    -o-transform: translateY(0)
+    +translateY(0)
 
 @keyframes slideDown
   0%
-    transform: translateY(-100%)
+    +translateY(-100%)
 
   100%
-    transform: translateY(0)
+    +translateY(0)
 
 .animated.slideDown
   -webkit-animation-name: slideDown
@@ -70,31 +61,31 @@
 
 @-webkit-keyframes slideUp
   0%
-    -webkit-transform: translateY(0)
+    +translateY(0)
 
   100%
-    -webkit-transform: translateY(-100%)
+    +translateY(-100%)
 
 @-moz-keyframes slideUp
   0%
-    -moz-transform: translateY(0)
+    +translateY(0)
 
   100%
-    -moz-transform: translateY(-100%)
+    +translateY(-100%)
 
 @-o-keyframes slideUp
   0%
-    -o-transform: translateY(0)
+    +translateY(0)
 
   100%
-    -o-transform: translateY(-100%)
+    +translateY(-100%)
 
 @keyframes slideUp
   0%
-    transform: translateY(0)
+    +translateY(0)
 
   100%
-    transform: translateY(-100%)
+    +translateY(-100%)
 
 .animated.slideUp
   -webkit-animation-name: slideUp
@@ -102,66 +93,65 @@
   -o-animation-name: slideUp
   animation-name: slideUp
 
-
 @-webkit-keyframes bounceInDown
   0%
-    opacity: 0
-    -webkit-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
   60%
-    opacity: 1
-    -webkit-transform: translateY(30px)
+    +opacity(1)
+    +translateY(30px)
 
   80%
-    -webkit-transform: translateY(-10px)
+    +translateY(-10px)
 
   100%
-    -webkit-transform: translateY(0)
+    +translateY(0)
 
 @-moz-keyframes bounceInDown
   0%
-    opacity: 0
-    -moz-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
   60%
-    opacity: 1
-    -moz-transform: translateY(30px)
+    +opacity(1)
+    +translateY(30px)
 
   80%
-    -moz-transform: translateY(-10px)
+    +translateY(-10px)
 
   100%
-    -moz-transform: translateY(0)
+    +translateY(0)
 
 @-o-keyframes bounceInDown
   0%
-    opacity: 0
-    -o-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
   60%
-    opacity: 1
-    -o-transform: translateY(30px)
+    +opacity(1)
+    +translateY(30px)
 
   80%
-    -o-transform: translateY(-10px)
+    +translateY(-10px)
 
   100%
-    -o-transform: translateY(0)
+    +translateY(0)
 
 @keyframes bounceInDown
   0%
-    opacity: 0
-    transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
   60%
-    opacity: 1
-    transform: translateY(30px)
+    +opacity(1)
+    +translateY(30px)
 
   80%
-    transform: translateY(-10px)
+    +translateY(-10px)
 
   100%
-    transform: translateY(0)
+    +translateY(0)
 
 .animated.bounceInDown
   -webkit-animation-name: bounceInDown
@@ -171,51 +161,51 @@
 
 @-webkit-keyframes bounceOutUp
   0%
-    -webkit-transform: translateY(0)
+    +translateY(0)
 
   30%
-    opacity: 1
-    -webkit-transform: translateY(20px)
+    +opacity(1)
+    +translateY(20px)
 
   100%
-    opacity: 0
-    -webkit-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
 @-moz-keyframes bounceOutUp
   0%
-    -moz-transform: translateY(0)
+    +translateY(0)
 
   30%
-    opacity: 1
-    -moz-transform: translateY(20px)
+    +opacity(1)
+    +translateY(20px)
 
   100%
-    opacity: 0
-    -moz-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
 @-o-keyframes bounceOutUp
   0%
-    -o-transform: translateY(0)
+    +translateY(0)
 
   30%
-    opacity: 1
-    -o-transform: translateY(20px)
+    +opacity(1)
+    +translateY(20px)
 
   100%
-    opacity: 0
-    -o-transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
 @keyframes bounceOutUp
   0%
-    transform: translateY(0)
+    +translateY(0)
 
   30%
-    opacity: 1
-    transform: translateY(20px)
+    +opacity(1)
+    +translateY(20px)
 
   100%
-    opacity: 0
-    transform: translateY(-200px)
+    +opacity(0)
+    +translateY(-200px)
 
 .animated.bounceOutUp
   -webkit-animation-name: bounceOutUp
@@ -225,29 +215,22 @@
 
   @-webkit-keyframes fadeInLeft
     0%
-        opacity: 0;
-        -webkit-transform: translateX(-20px)
-        transform: translateX(-20px)
+      +opacity(0)
+      +translateX(-20px)
 
     100%
-        opacity: 1;
-        -webkit-transform: translateX(0)
-        transform: translateX(0)
-
+      +opacity(1)
+      +translateX(0)
 
 @keyframes fadeInLeft
-    0%
-        opacity: 0;
-        -webkit-transform: translateX(-20px);
-        -ms-transform: translateX(-20px);
-        transform: translateX(-20px);
+  0%
+    +opacity(0)
+    +translateX(-20px)
 
-    100%
-        opacity: 1
-        -webkit-transform: translateX(0)
-        -ms-transform: translateX(0)
-        transform: translateX(0)
+  100%
+    +opacity(1)
+    +translateX(0)
 
 .fadeInLeft
-    -webkit-animation-name: fadeInLeft
-    animation-name: fadeInLeft
+  -webkit-animation-name: fadeInLeft
+  animation-name: fadeInLeft

@@ -3,4 +3,5 @@
 //= require nav
 //= require jquery.scrollTo
 //= require jquery.localScroll
- //= require scroll
+//= require scroll
+//= require show
